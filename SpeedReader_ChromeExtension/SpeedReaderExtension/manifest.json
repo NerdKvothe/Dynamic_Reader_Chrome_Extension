@@ -1,0 +1,35 @@
+{
+    "manifest_version": 2,
+    
+    "name": "SpeedReader",
+    "description": "This extension takes a text at the current web page and display's it word by word reading.",
+    "version": "1.0",
+    
+    "permissions": [
+      "tabs", 
+      "contextMenus"
+    ],
+    
+    "browser_action": {
+        "default_icon": {
+            "16": "images/icon16.png",
+            "19": "images/icon19.png",
+            "38": "images/icon38.png",
+            "128": "images/icon128.png"
+    },
+        "default_title": "Speed Reader",
+        "default_popup": "popup.html"
+    },
+    
+    "background": {
+        "scripts": ["background.js"]
+    },
+    
+    "content_scripts": [
+        {
+            "matches": ["http://*/*", "https://*/*"],
+            "js": ["background.js"]
+        }
+    ]
+    
+}
